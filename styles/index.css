@@ -1,0 +1,100 @@
+@import url("shared/animation.css");
+
+.lava-bar {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #10060d;
+  color: white;
+}
+
+.lava {
+  position: absolute;
+  inset: -100%;
+  z-index: -2;
+  filter: blur(45px);
+  opacity: .95;
+}
+
+.lava span {
+  position: absolute;
+  width: 35%;
+  height: 200%;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  animation: lavaMove 5s ease-in-out infinite alternate;
+}
+
+.lava span:nth-child(1) {
+  background: #332f2f21;
+  top: 0;
+  left: 5%;
+}
+
+.lava span:nth-child(2) {
+  background: #2e233a;
+  top: 0;
+  left: 35%;
+  animation-delay: -4s;
+}
+
+.lava span:nth-child(3) {
+  background: #302828;
+  top: 0;
+  left: 60%;
+  animation-delay: -7s;
+}
+
+.lava span:nth-child(4) {
+  background: #f1eeee;
+  top: 0;
+  left: 80%;
+  animation-delay: -2s;
+}
+
+@keyframes lavaMove {
+  0% {
+    transform: translate(-10%, -10%) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(20%, 10%) rotate(180deg) scale(1.4);
+  }
+}
+
+.lava-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(8, 3, 10, .25)
+}
+
+.lava-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px
+}
+
+.lava-content h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  text-decoration: none
+}
+
+#blinking-right-arrow {
+  animation: simple-black-visibility-blinking-anim 1200ms steps(8, start) infinite alternate;
+  font-weight: bold
+}

@@ -1,0 +1,16 @@
+@keyframes simple-black-visibility-blinking-anim {
+  to {
+    color: black;
+    visibility: hidden
+  }
+}
+
+@keyframes very-cool-pulse-anim {
+    from {
+        transform: scale(0.75); opacity: 0.6
+    }
+
+    to {
+        transform: scale(1.4); opacity: 1
+    }
+}
